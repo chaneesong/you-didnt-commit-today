@@ -1,0 +1,24 @@
+{
+  "name": "you-didnt-commit-today",
+  "version": "1.0.0",
+  "description": "커밋을 하지 않은 날은 개판으로 한 날로 간주하고 동기 부여 영상을 전송한다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kacohead96/you-didnt-commit-today.git"
+  },
+  "author": "kacohead96",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kacohead96/you-didnt-commit-today/issues"
+  },
+  "homepage": "https://github.com/kacohead96/you-didnt-commit-today#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "nodemailer": "^6.8.0",
+    "octokit": "^2.0.7"
+  }
+}
