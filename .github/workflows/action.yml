@@ -8,5 +8,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16.14.2
+        env:
+          HOST: ${{ secrets.HOST }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          REPOSITORY_ACCESS_KEY: ${{ secrets.REPOSITORY_ACCESS_KEY }}
+          USER_NAME: ${{ secrets.USER_NAME }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+
       - run: npm install
       - run: npm start
