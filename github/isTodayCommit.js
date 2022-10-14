@@ -17,7 +17,7 @@ function createQuery() {
 }
 
 module.exports = async () => {
-  const octokit = new Octokit({ auth: process.env.GITHUB_ACCESS_KEY });
+  const octokit = new Octokit({ auth: process.env.REPOSITORY_ACCESS_KEY });
   const query = createQuery();
   const req = await octokit.request(`GET /search/commits?q=${query}`, {});
 
