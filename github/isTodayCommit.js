@@ -11,7 +11,7 @@ function getoday(today) {
 }
 
 function createQuery() {
-  const committerDateQuery = encodeURIComponent(`committer-date:${getoday(new Date())}T00:00:00+0900`);
+  const committerDateQuery = encodeURIComponent(`committer-date:>=${getoday(new Date())}T00:00:00+0900`);
   const userNameQuery = encodeURIComponent(`user:${process.env.USER_NAME}`);
   return `${committerDateQuery}+${userNameQuery}`;
 }
