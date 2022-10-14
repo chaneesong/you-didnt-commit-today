@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron: '10 19 * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   bulid:
