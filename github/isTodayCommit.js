@@ -23,5 +23,3 @@ module.exports = async () => {
 
   return req.data.total_count ? true : false;
 };
-
-getoday();
