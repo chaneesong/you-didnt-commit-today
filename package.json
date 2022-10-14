@@ -4,7 +4,7 @@
   "description": "커밋을 하지 않은 날은 개판으로 한 날로 간주하고 동기 부여 영상을 전송한다.",
   "main": "index.js",
   "scripts": {
-    "test": "node index"
+    "start": "node index"
   },
   "repository": {
     "type": "git",
