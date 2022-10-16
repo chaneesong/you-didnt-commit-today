@@ -2,10 +2,12 @@ const { google } = require('googleapis');
 
 require('dotenv').config();
 
-const youtube = google.youtube('v3');
+const youtube = google.youtube({
+  version: 'v3',
+  auth: process.env.YOUTUBE_API_KEY,
+});
 
 const params = {
-  key: process.env.YOUTUBE_API_KEY,
   part: 'snippet',
   q: '동기부여',
   maxResults: 50,
