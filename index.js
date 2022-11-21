@@ -5,7 +5,7 @@ const sendMail = require('./mail/sendMail');
 
 async function main() {
   const isCommit = await isTodayCommit();
-  if (!isCommit) {
+  if (isCommit) {
     const { videoId, thumbnail } = await getOneVideoInfo();
     sendMail(renderMailBody(videoId, thumbnail));
   }
