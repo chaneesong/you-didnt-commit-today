@@ -11,8 +11,9 @@ jobs:
   bulid:
     runs-on: ubuntu-latest
     env:
-      HOST: ${{ secrets.HOST }}
-      PASSWORD: ${{ secrets.PASSWORD }}
+      FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
+      FROM_EMAIL_PASSWORD: ${{ secrets.FROM_EMAIL_PASSWORD }}
+      TO_EMAIL: ${{secrets.TO_EMAIL}}
       REPOSITORY_ACCESS_KEY: ${{ secrets.REPOSITORY_ACCESS_KEY }}
       USER_NAME: ${{ secrets.USER_NAME }}
       YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
