@@ -12,13 +12,17 @@ const transporter = nodemailer.createTransport({
 });
 
 module.exports = async (mailBody) => {
-  const mailOptions = {
-    from: process.env.FROM_EMAIL,
-    to: process.env.TO_EMAIL,
-    subject: '오늘을 되돌아보시길 바랍니다.',
-    html: mailBody,
-  };
-  const mailInfo = await transporter.sendMail(mailOptions);
+  try {
+    const mailOptions = {
+      from: process.env.FROM_EMAIL,
+      to: process.env.TO_EMAIL,
+      subject: '오늘을 되돌아보시길 바랍니다.',
+      html: mailBody,
+    };
+    const mailInfo = await transporter.sendMail(mailOptions);
 
-  return mailInfo;
+    return mailInfo;
+  } catch (error) {
+    console.error(error);
+  }
 };

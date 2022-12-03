@@ -11,15 +11,21 @@ function getoday(today) {
 }
 
 function createQuery() {
-  const committerDateQuery = encodeURIComponent(`committer-date:>=${getoday(new Date())}T00:00:00+0900`);
+  const committerDateQuery = encodeURIComponent(
+    `committer-date:>=${getoday(new Date())}T00:00:00+0900`
+  );
   const userNameQuery = encodeURIComponent(`user:${process.env.USER_NAME}`);
   return `${committerDateQuery}+${userNameQuery}`;
 }
 
 module.exports = async () => {
-  const octokit = new Octokit({ auth: process.env.REPOSITORY_ACCESS_KEY });
-  const query = createQuery();
-  const req = await octokit.request(`GET /search/commits?q=${query}`, {});
+  try {
+    const octokit = new Octokit({ auth: process.env.REPOSITORY_ACCESS_KEY });
+    const query = createQuery();
+    const req = await octokit.request(`GET /search/commits?q=${query}`, {});
 
-  return req.data.total_count ? true : false;
+    return req.data.total_count ? true : false;
+  } catch (error) {
+    console.error(error);
+  }
 };

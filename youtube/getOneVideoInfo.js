@@ -21,11 +21,17 @@ function parseSearchItems(searchItems) {
 }
 
 async function getOneVideoInfo() {
-  const searchData = await youtube.search.list(params, { responseType: 'json' });
-  const parsingItems = parseSearchItems(searchData.data.items);
-  const resultItem = parsingItems[Math.floor(Math.random() * 50)];
+  try {
+    const searchData = await youtube.search.list(params, {
+      responseType: 'json',
+    });
+    const parsingItems = parseSearchItems(searchData.data.items);
+    const resultItem = parsingItems[Math.floor(Math.random() * 50)];
 
-  return resultItem;
+    return resultItem;
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 module.exports = getOneVideoInfo;
