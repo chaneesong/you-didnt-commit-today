@@ -16,7 +16,7 @@ module.exports = async (mailBody) => {
     const mailOptions = {
       from: process.env.FROM_EMAIL,
       to: process.env.TO_EMAIL,
-      subject: '오늘을 되돌아보시길 바랍니다.',
+      subject: process.env.SUBJECT,
       html: mailBody,
     };
     const mailInfo = await transporter.sendMail(mailOptions);
