@@ -15,6 +15,7 @@ jobs:
       REPOSITORY_ACCESS_KEY: ${{ secrets.REPOSITORY_ACCESS_KEY }}
       USER_NAME: ${{ secrets.USER_NAME }}
       YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+      SUBJECT: ${{ secrets.SUBJECT }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
